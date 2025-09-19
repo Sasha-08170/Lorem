@@ -8,8 +8,6 @@ export interface CardProps {
   title: string; // Заголовок карточки
   text: string; // Текст карточки
   link: string; // Ссылка для перехода
-  color?: string; // Цвет декорации (по умолчанию зелёный)
-  className?: string; // Доп. класс для стилизации
   onClick?: (id?: number) => void; // Обработчик клика
 }
 
