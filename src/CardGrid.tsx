@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Cards.module.css';
 
 export interface CardProps {
+  id?: number; // уникальный идентификатор (для key и onClick)
   title: string; // Заголовок карточки
   text: string; // Текст карточки
   link: string; // Ссылка для перехода
@@ -12,11 +13,11 @@ export interface CardProps {
   onClick?: (id?: number) => void; // Обработчик клика
 }
 
-const Card: React.FC<CardProps> = ({ title, text, link, onClick }) => {
+const Card: React.FC<CardProps> = ({ id, title, text, link, onClick }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
       e.preventDefault();
-      onClick();
+      onClick(id);
     }
   };
 
