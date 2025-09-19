@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import CardGrid from './CardGrid';
-import cards from './Сards.json'; // импорт JSON
+import Cards from './CardGrid';
+import Card from './Сards.json';
 import './index.css';
 
 interface CardItem {
@@ -15,8 +15,8 @@ const App: React.FC = () => {
   return (
     <>
       <div className={clsx('cards')}>
-        {(cards as CardItem[]).map((card) => (
-          <CardGrid key={card.id} title={card.title} text={card.text} link={card.link} />
+        {(Card as CardItem[]).map((card) => (
+          <Cards key={card.id} title={card.title} text={card.text} link={card.link} />
         ))}
       </div>
     </>
