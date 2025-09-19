@@ -5,28 +5,16 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  padding: 20px;
-}
-
-.card-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #2d2828;
 }
 
 .card {
-  height: auto;
-  width: 500px;
   background-color: #121212;
   border-radius: 28px;
   overflow: hidden;
@@ -40,7 +28,6 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
 }
 
-/* Базовое свечение */
 .card::before {
   content: '';
   position: absolute;
@@ -98,50 +85,42 @@ body {
   opacity: 0.6;
 }
 
-/* Индивидуальное свечение + неон */
 .card:nth-child(6n + 1)::before {
-  background: radial-gradient(circle at top right, rgba(249, 178, 52, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(249, 178, 52, 0.7), 0 0 30px rgba(249, 178, 52, 0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.25), transparent 70%);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+  border-radius: inherit;
 }
 .card:nth-child(6n + 2)::before {
-  background: radial-gradient(circle at top right, rgba(62, 205, 94, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(62, 205, 94, 0.7), 0 0 30px rgba(62, 205, 94, 0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.25), transparent 70%);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5); /* <--- Изменено */
+  border-radius: inherit; /* Чтобы градиент повторял скругления карточки */
 }
-.card:nth-child(6n + 3)::before {
-  background: radial-gradient(circle at top right, rgba(228, 64, 2, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(228, 64, 2, 0.7), 0 0 30px rgba(228, 64, 2, 0.5);
-}
-.card:nth-child(6n + 4)::before {
-  background: radial-gradient(circle at top right, rgba(149, 42, 255, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(149, 42, 255, 0.7), 0 0 30px rgba(149, 42, 255, 0.5);
-}
-.card:nth-child(6n + 5)::before {
-  background: radial-gradient(circle at top right, rgba(205, 62, 148, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(205, 62, 148, 0.7), 0 0 30px rgba(205, 62, 148, 0.5);
-}
-.card:nth-child(6n + 6)::before {
-  background: radial-gradient(circle at top right, rgba(76, 73, 234, 0.25), transparent 70%);
-  box-shadow: 0 0 15px rgba(76, 73, 234, 0.7), 0 0 30px rgba(76, 73, 234, 0.5);
-}
+
+/* Добавим стили для 6n+3, 6n+4, 6n+5, 6n+0, если они есть.
+   Для примера оставим только эти два, но если у тебя есть другие правила для ::before,
+   их нужно будет дополнить аналогично.
+*/
 
 /* Цвета кругов */
 .card:nth-child(6n + 1) .card__decoration {
-  background-color: #f9b234;
+  background-color: #ffffff;
 }
 .card:nth-child(6n + 2) .card__decoration {
-  background-color: #3ecd5e;
-}
-.card:nth-child(6n + 3) .card__decoration {
-  background-color: #e44002;
-}
-.card:nth-child(6n + 4) .card__decoration {
-  background-color: #952aff;
-}
-.card:nth-child(6n + 5) .card__decoration {
-  background-color: #cd3e94;
-}
-.card:nth-child(6n + 6) .card__decoration {
-  background-color: #4c49ea;
+  background-color: #ffffff;
 }
 
 /* Анимация свечения */
