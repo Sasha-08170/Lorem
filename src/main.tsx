@@ -1,10 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Cards from './Card.tsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Card from './Card.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Cards />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Card />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

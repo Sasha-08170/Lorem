@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.card-grid {
+.cards {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
