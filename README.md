@@ -2,6 +2,8 @@
 
 Анимированные карточки на **React + TypeScript** с поддержкой адаптивности и кастомных обработчиков кликов.  
 
+<img width="1916" height="857" alt="Screenshot_2025_09_20-1" src="https://github.com/user-attachments/assets/6f98307c-9357-4d49-8bce-d3c244f0fa07" />
+
 ---
 
 ## 📂 Структура проекта
